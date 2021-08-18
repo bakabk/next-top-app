@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import style from './P.module.scss';
 
-export default function P({ className, children, size = "m" }: PProps): JSX.Element {
+function P({ className, children, size = "m" }: PProps): JSX.Element {
     const classes = cn(className, style.p, {
         [style.s]: size === "s",
         [style.m]: size === "m",
@@ -11,3 +11,5 @@ export default function P({ className, children, size = "m" }: PProps): JSX.Elem
     });
     return <p className={classes}>{children}</p>;
 }
+
+export default P;

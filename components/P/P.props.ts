@@ -1,7 +1,7 @@
-import { ReactChild } from 'react';
+import { ReactNode } from 'react';
 
 export default interface PProps {
     size?: 's' | 'm' | 'l',
-    children: ReactChild,
+    children: ReactNode,
     className?: string
 }
