@@ -4,6 +4,7 @@ import Button from '../components/Button/Button';
 import P from '../components/P/P';
 import Tag from '../components/Tag/Tag';
 import Rating from '../components/Rating/Rating';
+import Layout from '../Layout/Layout';
 
 export default function Home(): JSX.Element {
   const [rating, setRating] = useState(4);
@@ -12,7 +13,7 @@ export default function Home(): JSX.Element {
   };
 
   return (
-    <div>
+    <Layout>
       <HTag tag='h1'>Заголовок первого уровня</HTag>
       <Button apperanse='primary' onClick={handleClick} arrow='down'>primary button</Button>
       <Button apperanse='ghost' arrow='right'>ghost button</Button>
@@ -30,6 +31,6 @@ export default function Home(): JSX.Element {
       <Tag type='grey' href='https://ya.ru'>Grey тэг</Tag>
       <hr />
       <Rating rating={rating} isEditable onChangeRating={setRating}></Rating>
-    </div>
+    </Layout>
   );
 }
