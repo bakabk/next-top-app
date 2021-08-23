@@ -11,7 +11,8 @@ function Tag({ className, children, size = 's', type = 'ghost', href, ...resProp
         [style.primary]: type === 'primary',
         [style.green]: type === 'green',
         [style.red]: type === 'red',
-        [style.grey]: type === 'grey'
+        [style.grey]: type === 'grey',
+        [style.hover]: href
     });
     const data = href ? <a href={href}>{children}</a> : children;
 
