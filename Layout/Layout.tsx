@@ -1,5 +1,4 @@
 import {FunctionComponent} from "react";
-import cn from 'classnames';
 
 import HeadLayout from './HeadLayout/HeadLayout';
 import FooterLayout from './FooterLayout/FooterLayout';
@@ -9,14 +8,14 @@ import LayoutProps from './Layout.props';
 import style from './Layout.module.scss';
 
 export default function Layout({ children }: LayoutProps): JSX.Element {    
-    return <>
-        <HeadLayout />
-        <div>
-            <SidebarLayout />
-            <div>{children}</div>
+    return <div className={style.wrapper}>
+        <HeadLayout className={style.header} />
+        <SidebarLayout className={style.sidebar} />
+        <div className={style.body}>
+            {children}
         </div>
-        <FooterLayout />
-    </>;
+        <FooterLayout className={style.footer} />
+    </div>;
 }
 
 export const WithLayout = <T extends Record<string, unknown>>(Component: FunctionComponent<T>) => {

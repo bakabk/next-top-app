@@ -1,3 +1,52 @@
 .footer {
-    display: block;
+    display: grid;
+
+    height: 50px;
+    padding: 0 32px;
+
+    color: var(--white);
+    background-color: var(--primary);
+
+    align-items: center;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    line-height: 22px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr auto auto;
+}
+
+.link {
+    margin-left: 40px;
+}
+
+@media (max-width: 765px) {
+    .footer {
+        align-items: center;
+
+        height: auto;
+        padding: 10px 32px;
+
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    .copyright {
+        height: 20px;
+
+        text-align: center;
+
+        line-height: 20px;
+    }
+
+    .link {
+        height: 20px;
+        margin: 0;
+
+        text-align: center;
+
+        line-height: 20px;
+    }
 }
