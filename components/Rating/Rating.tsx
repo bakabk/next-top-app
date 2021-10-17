@@ -12,7 +12,7 @@ interface IDataSet {
     index?: string;
 }
 
-const initRating = [undefined, undefined, undefined, undefined, undefined];
+const initRating = Array(5).fill(<></>);
 
 export default function Rating({ className, rating, isEditable = false, onChangeRating, ...restProps }: RatingProps): JSX.Element {
     const [currentRating, setRating] = useState<ratingType>(initRating);
@@ -24,7 +24,7 @@ export default function Rating({ className, rating, isEditable = false, onChange
     };
 
     const handleClick = (event: React.MouseEvent<HTMLSpanElement>): void => {
-        if (!isEditable) return;
+        if (!isEditable && !onChangeRating) return;
 
         const preparedIndex:number = getIndex(event.currentTarget.dataset);
         onChangeRating(preparedIndex);
